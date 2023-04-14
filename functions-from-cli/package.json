@@ -1,0 +1,7 @@
+{
+  "name": "GCloud Funtions",
+  "version": "0.0.1",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^3.1.3"
+  }
+}

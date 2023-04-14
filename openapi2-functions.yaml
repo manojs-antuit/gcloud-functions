@@ -1,0 +1,33 @@
+# openapi2-functions.yaml
+swagger: '2.0'
+info:
+  title: my-first-api
+  description: Sample API on API Gateway with a Google Cloud Functions backend
+  version: 1.0.0
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /hello-1:
+    get:
+      summary: Greet a user from first function
+      operationId: hello-1
+      x-google-backend:
+        address: https://us-central1-main-sunset-382604.cloudfunctions.net/first-function
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
+  /hello-2:
+    get:
+      summary: Greet a user from function created from cli
+      operationId: hello-2
+      x-google-backend:
+        address: https://function-from-cli-ho2yjwy4nq-uc.a.run.app #function created from CLI
+      responses:
+        '200':
+          description: A successful response
+          schema:
+            type: string
